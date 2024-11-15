@@ -1,3 +1,5 @@
+import perfil
+
 def escrever_arquivo(nome_arquivo):
     entrada = input('Digite...\n' )
     with open(nome_arquivo, 'w') as arquivo:
@@ -36,22 +38,32 @@ def cadastrar(usuario, senha):
             continue
 
 
-
 def login(usuario, senha):
-    with open('usuarios', 'r') as arquivo:
-        usuarios = arquivo.readlines()
-        for linha in usuarios:
-            dados = linha.strip().split(',')
-            if len(dados) == 2:  # Check if the line has exactly two values
-                catch_usuario, catch_senha = dados
-                if catch_usuario == usuario and catch_senha == senha:
-                    print("Cadastrado realizado com Sucesso!!!")
-                    print('Digite 1 para retornar a tela de login')
-                    while True:
-                        escolha = int(input())
-                        if escolha == 1:
-                            break
-                        else:
-                            print('Comando inválido')
-                            continue
+    try:
+        with open('usuarios.txt', 'r') as arquivo:
+            usuarios = arquivo.readlines()
+            for linha in usuarios:
+                dados = linha.strip().split(',')
+                if len(dados) == 2:
+                    catch_usuario, catch_senha = dados
+                    if catch_usuario == usuario and catch_senha == senha:
+                        perfil.usuario_logado = usuario  # Update the global variable
+                        print(f'Bem vindo {usuario}')
+                        print('1. Retornar à tela de login\n'
+                              '2. Visualizar Perfil\n'
+                              '3. Planejar rota\n'
+                              '4. Formar Grupo')
+                        while True:
+                            escolha = int(input())
+                            if escolha == 1:
+                                return
+                            else:
+                                print('Comando inválido')
+                                continue
+            print('Usuário ou senha incorretos. Tente novamente.')
+    except FileNotFoundError:
+        print("O arquivo de usuários não foi encontrado.")
+
+
+
 
