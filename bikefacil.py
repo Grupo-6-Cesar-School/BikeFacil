@@ -1,15 +1,16 @@
 import perfil
 from funções import cadastrar, login
-from art import ascii_art2
+from art import ascii_art2, ascii_art4
+
 
 def print_usuario_logado():
     if perfil.usuario_logado:
         print(f'Usuário logado: {perfil.usuario_logado}')
     else:
         print("Nenhum usuário está logado atualmente")
-
+print(ascii_art4)
 while True:
-    print("--- BikeFacil --- \n"
+    print("--- MENU --- \n"
           "1. para Login\n"
           "2. para Cadastrar usuário\n"
           "3. para sair\n"

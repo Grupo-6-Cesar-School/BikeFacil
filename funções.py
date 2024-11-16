@@ -1,4 +1,12 @@
 import perfil
+from art import ascii_art3
+from perfil import profile
+import time
+
+def countdown(seconds):
+    for i in range(seconds, 0, -1):
+        print(f'Retornando ao menu principal em {i}...')
+        time.sleep(1)
 
 def escrever_arquivo(nome_arquivo):
     entrada = input('Digite...\n' )
@@ -15,6 +23,7 @@ def cadastrar(usuario, senha):
                     existing_username, _ = dados
                     if existing_username == usuario:
                         print('Usuário já existe. Por favor, escolha um nome de usuário diferente.')
+                        countdown(4)
                         return
 
         # If the user does not exist, add them to the file
@@ -57,13 +66,20 @@ def login(usuario, senha):
                             escolha = int(input())
                             if escolha == 1:
                                 return
+                            elif escolha == 2:
+                                profile()
+                            elif escolha == 3:
+                                rota()
                             else:
                                 print('Comando inválido')
                                 continue
             print('Usuário ou senha incorretos. Tente novamente.')
+            countdown(4)
     except FileNotFoundError:
         print("O arquivo de usuários não foi encontrado.")
 
 
 
 
+def rota():
+    print(ascii_art3)
