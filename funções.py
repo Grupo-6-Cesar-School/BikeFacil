@@ -1,11 +1,34 @@
 import perfil
-from art import ascii_art3
+from art import ascii_art2, ascii_art3
 from perfil import profile
 import time
 
+#Como esse ap não utilizará GPS
+locais_recife = {
+    "Marco Zero": 0,
+    "Shopping Riomar": 3.6,
+    "Shopping Boa Vista": 2.0,
+    "Shopping Recife":  7.3,
+
+
+
+}
+def apertei_enter_sem_querer(prompt):
+    """#Estava apertando enter sem querer muitas vezes na hora de testar o código
+    então criei esse código que impede isso + umas frescurinhas"""
+    while True:
+        user_input = input(prompt)
+        if user_input.strip():
+            try:
+                return int(user_input)
+            except ValueError:
+                print("Por favor, insira um número válido.")
+        else:
+            print("Input não pode estar vazio. Por favor, tente novamente.")
+
 def countdown(seconds):
     for i in range(seconds, 0, -1):
-        print(f'Retornando ao menu principal em {i}...')
+        print(f'Retornando ao menu anterior em {i}...')
         time.sleep(1)
 
 def escrever_arquivo(nome_arquivo):
@@ -23,7 +46,7 @@ def cadastrar(usuario, senha):
                     existing_username, _ = dados
                     if existing_username == usuario:
                         print('Usuário já existe. Por favor, escolha um nome de usuário diferente.')
-                        countdown(4)
+                        countdown(3)
                         return
 
         # If the user does not exist, add them to the file
@@ -58,23 +81,27 @@ def login(usuario, senha):
                     if catch_usuario == usuario and catch_senha == senha:
                         perfil.usuario_logado = usuario  # Update the global variable
                         print(f'Bem vindo {usuario}')
-                        print('1. Retornar à tela de login\n'
-                              '2. Visualizar Perfil\n'
-                              '3. Planejar rota\n'
-                              '4. Formar Grupo')
                         while True:
-                            escolha = int(input())
+                            print('--- MENU ---\n'
+                                   '1. Visualizar Perfil\n'
+                                   '2. Planejar Rota\n'
+                                   '3. Fromar Grupo\n'
+                                   '4. Sair.\n')
+                            escolha = apertei_enter_sem_querer("")
                             if escolha == 1:
-                                return
-                            elif escolha == 2:
                                 profile()
-                            elif escolha == 3:
+                            elif escolha == 2:
                                 rota()
+                            elif escolha == 3:
+                                print('Under construction')
+                            elif escolha == 4:
+                                print(ascii_art2)
+                                exit()
                             else:
                                 print('Comando inválido')
                                 continue
             print('Usuário ou senha incorretos. Tente novamente.')
-            countdown(4)
+            countdown(3)
     except FileNotFoundError:
         print("O arquivo de usuários não foi encontrado.")
 
@@ -83,3 +110,18 @@ def login(usuario, senha):
 
 def rota():
     print(ascii_art3)
+    while True:
+        print('--- * ---\n'
+              '1. Usar localização atual\n'
+              '2. Digitar localização manualmente\n'
+              '3. Retornar ao menu anterior \n')
+        escolha = apertei_enter_sem_querer('...\n')
+        if escolha == 1:
+            print('Utilizaremos a localização atual do GPS')
+        elif escolha == 2:
+            local = str(input('Digite o ponto de partida.'))
+        elif escolha == 3:
+            countdown(3)
+            break
+        else:
+            print('Comando inválido')

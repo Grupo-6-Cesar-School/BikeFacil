@@ -1,5 +1,5 @@
 import perfil
-from funções import cadastrar, login
+from funções import cadastrar, login, apertei_enter_sem_querer
 from art import ascii_art2, ascii_art4
 
 
@@ -15,8 +15,8 @@ while True:
           "2. para Cadastrar usuário\n"
           "3. para sair\n"
           "Escolha uma opção\n")
+    escolha = apertei_enter_sem_querer("")
 
-    escolha = int(input())
     if escolha == 1:
         user = input('Digite o usuário\n')
         senha = input('Digite a senha\n')
