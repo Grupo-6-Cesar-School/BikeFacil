@@ -3,15 +3,20 @@ from art import ascii_art2, ascii_art3
 from perfil import profile
 import time
 
-#Como esse ap não utilizará GPS
+'''Como este programa não utilizará um GPS de fato, 
+utilizaremos o Marco Zero da cidade do Recife como referência. 
+Todas as localizações a seguir terão suas distâncias calculadas em relação a este ponto..
+------------------------------------------------
+Distâncias calculadas através do aplicativo Uber.
+'''
 locais_recife = {
     "Marco Zero": 0,
     "Shopping Riomar": 3.6,
-    "Shopping Boa Vista": 2.0,
+    "Shopping Boa Vista": 2,
     "Shopping Recife":  7.3,
-
-
-
+    "Praça da Jaqueira": 4,
+    "Cesar School Brum": 2,
+    "Monte Everest": 13540,
 }
 def apertei_enter_sem_querer(prompt):
     """#Estava apertando enter sem querer muitas vezes na hora de testar o código
