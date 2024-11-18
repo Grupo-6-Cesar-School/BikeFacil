@@ -34,9 +34,6 @@ def apertei_enter_sem_querer(prompt):
             print("Input não pode estar vazio. Por favor, tente novamente.")
 
 
-
-
-
 def countdown(seconds):
     """#É só uma função que irá contar até x(geralmente 3) antes de voltar quebrar o loop de outra função para retornar ao menu anterior
     assim a mudança de menus fique menus abrupta, não será printado várias letras no console de uma vez."""
@@ -84,11 +81,13 @@ def display_menu_and_get_selection(locais_recife):
         else:
             print('Comando inválido')
 
+
 #Auto explicativo
 def escrever_arquivo(nome_arquivo):
     entrada = input('Digite...\n' )
     with open(nome_arquivo, 'w') as arquivo:
         arquivo.write(entrada + "\n")
+
 
 #Cadastrar o usuário e senha  separados por vírgula no arquivo .txt
 def cadastrar(usuario, senha):
@@ -109,6 +108,7 @@ def cadastrar(usuario, senha):
             arquivo.write(f"{usuario},{senha}\n")
         print("Cadastro realizado com Sucesso!!!")
 
+
     except FileNotFoundError:
         # Se o arquivo não existir a função irá cria-lo e adicionar o usuário, muito legal, né!?
         with open('usuarios.txt', 'w') as arquivo:
@@ -123,6 +123,7 @@ def cadastrar(usuario, senha):
         else:
             print('Comando inválido')
             continue
+
 
 #login, sim é case sensitive.
 def login(usuario, senha):
@@ -161,8 +162,7 @@ def login(usuario, senha):
         print("O arquivo de usuários não foi encontrado.")
 
 
-
-#Socorro Alan Turing, me ajuda, por favor.
+#Essa função é basicamente o primeiro menuzinho da Rota que tem a arte ASCII bonitinha, então ela chama a outra função chata lá em cima.
 
 def rota():
     print(ascii_art3)
@@ -172,4 +172,4 @@ def rota():
         display_menu_and_get_selection(locais_recife)
         break
 
-
+#Socorro Alan Turing, me ajuda, por favor.

@@ -3,6 +3,11 @@ from art import ascii_art
 usuario_logado = None
 total_km = 0
 total_award = 0
+
+'''add_km e add_award são funções que irão lidar com variáveis globais que armazenarão o desempenho do usuário
+como kms percorridos e troféus, a cada 10km percorridos o usuário recebe um award em seu perfil, 
+inflará o seu ego tanto quanto um like naquele seu story do insta, mas em adicional você também irá emagrecer =)'''
+
 def add_km(km):
     global total_km
     total_km += km

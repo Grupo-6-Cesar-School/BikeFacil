@@ -6,10 +6,6 @@ ascii_art = r"""
 ▐▌   ▐▙▄▄▖▐▌ ▐▌▐▌   ▗▄█▄▖▐▙▄▄▖
 """
 
-
-
-
-
 ascii_art2 = r"""
  ▗▄▄▖ ▗▄▖  ▗▄▖ ▗▄▄▄      ▗▄▄▖▗▖  ▗▖▗▄▄▄▖
 ▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌  █     ▐▌ ▐▌▝▚▞▘ ▐▌   
@@ -45,3 +41,9 @@ ascii_art5 = r"""
    `---'        `---'      
 
 """
+
+'''Quase não sou programador, quem dirá artista, sequestrei todas essas ASCII arts, os créditos estarão nos links a seguir.
+https://steamcommunity.com/groups/asciiartamalgamation
+https://emojicombos.com/steam-ascii-art
+https://patorjk.com/software/taag/
+'''
