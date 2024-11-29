@@ -1,8 +1,7 @@
 import perfil
 from funções import cadastrar, login, apertei_enter_sem_querer
 from art import ascii_art2, ascii_art4
-
-#o arquivo bikefacil vulgo main.py é basicamente o primeiro menu do app, a bagunça(funções) estão no arquivo funções.py
+#o arquivo bikefacil vulgo main.py é basicamente o primeiro menu do app, a bagunça está no arquivo funções.py
 def print_usuario_logado():
     if perfil.usuario_logado:
         print(f'Usuário logado: {perfil.usuario_logado}')
@@ -17,10 +16,9 @@ while True:
     print("--- MENU --- \n"
           "1. para Login\n"
           "2. para Cadastrar usuário\n"
-          "3. para sair\n"
+          "3. para Sair\n"
           "Escolha uma opção\n")
     escolha = apertei_enter_sem_querer("")
-
 
     if escolha == 1:
         user = input('Digite o usuário\n')
@@ -36,6 +34,7 @@ while True:
     elif escolha == 3:
         print(ascii_art2)
         break
+
     else:
         print('Opção inválida')
         continue
