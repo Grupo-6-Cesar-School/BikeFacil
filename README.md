@@ -1,11 +1,14 @@
 # BikeFacil
 Projeto Cesar School Grupo 6
+
 ## Overview
 Esse programa simples é uma simulação de um programa real, claro que com todas limitações, e  tudo acontece no terminal, o 
 usuário pode se cadastrar, logar, conferir seu perfil, escolher uma rota, adicionar amigos, calcular quantos km percorreu, 
 CO2 que deixou de emitir na atmosfera ao usar uma bicicleta ao invés de um veículo convencional.
----------------------------------------------------------------------------------------------------------------------------
 
+---
+
+```plaintext
 bike_facil/
 ├── bike_facill.py
       Apenas um menu que irá printar informações no console e pedir inputs do usuário.
@@ -17,5 +20,3 @@ bike_facil/
       em um arquivo chamado usuario.txt
 ├── art.py 
     A fim de tornar a experiência do terminal mais agradável o arquivo art.py reune todas as artes ascii que serão exibidas no terminal.
-    
-├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
